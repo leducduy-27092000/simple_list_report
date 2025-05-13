@@ -1,0 +1,79 @@
+<mvc:View controllerName="simplelistreport.controller.Header"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:sfb="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable">
+
+        <Page id="page1" title="{i18n>title}">
+            <content>
+                <sfb:SmartFilterBar
+                    id="smartFilterBar"
+                    entitySet="Products"
+                    enableBasicSearch="true"
+                    basicSearchFieldName="CompanyCode"
+                    persistencyKey="UniqueAndStablePersistencyKey"> 	
+                </sfb:SmartFilterBar>
+
+                <smartTable:SmartTable
+                    id="smartTable"
+                    entitySet="Products"
+                    smartFilterId="smartFilterBar"
+                    tableType="Table"
+                    enableAutoColumnWidth="true"
+                    useTablePersonalisation="true"
+                    header="Customer orders"
+                    showRowCount="true"> 
+                    <smartTable:layoutData>
+                        <FlexItemData id="_IDGenFlexItemData" growFactor="1" baseSize="0%"/>
+                    </smartTable:layoutData>
+
+                    <smartTable:customToolbar>
+                        <Toolbar >
+                            <content>
+                                <ToolbarSpacer />
+                                <Button icon="sap-icon://detail-view" text="Detail Product" iconFirst="false" type="Emphasized" press="onDetailProduct" />
+                            </content>
+                        </Toolbar>
+                    </smartTable:customToolbar>
+                </smartTable:SmartTable>        
+
+    <!-- Smart Table -->
+            <!-- <Table id="idProductsTable" inset="false" items="{
+			    path: '/Products'
+		    }">
+                <columns>
+                    <Column>
+                        <Text text="Product ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Product Name" />
+                    </Column>
+                    <Column>
+                        <Text text="SupplierID" />
+                    </Column>
+                    <Column>
+                        <Text text="Unit Price" />
+                    </Column>
+                    <Column>
+                        <Text text="Units In Stock" />
+                    </Column>
+                    <Column>
+                        <Text text="Units On Order" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{ProductID}" />
+                            <Text text="{ProductName}" />
+                            <Text text="{SupplierID}" />
+                            <Text text="{UnitPrice}" />
+                            <Text text="{UnitsInStock}" />
+                            <Text text="{UnitsOnOrder}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table> -->
+            </content>
+        </Page>
+</mvc:View>

@@ -1,0 +1,23 @@
+<mvc:View
+    controllerName="simplelistreport.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    
+    <Page id="Detail" title="Product Detail" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Text text="Product ID:" />
+                <Text text="{ProductID}" />
+                <Text text="Product Name:" />
+                <Text text="{ProductName}" />
+                <Text text="Supplier ID:" />
+                <Text text="{SupplierID}" />
+                <Text text="Unit Price:" />
+                <Text text="{UnitPrice}" />
+                <Text text="Units In Stock:" />
+                <Text text="{UnitsInStock}" />
+            </VBox>
+        </content>
+    </Page>
+
+</mvc:View>
